@@ -43,7 +43,7 @@ function ReportForm() {
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="ngoId" className="form-label">NGO ID</label>
-            <input type="text" className="form-control" name="ngoId" value={formData.ngoId} onChange={handleChange} required />
+            <input type="number" className="form-control" name="ngoId" value={formData.ngoId} onChange={handleChange} required />
           </div>
 
           <div className="mb-3">

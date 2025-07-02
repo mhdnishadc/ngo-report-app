@@ -1,4 +1,4 @@
-const report = require('../models/reportModel');
+const report = require('../models/Report');
 
 exports.submitReport = async(req, res)=>{
     const { ngoId, month, peopleHelped, eventsConducted, fundsUtilized } = req.body;
@@ -19,10 +19,10 @@ exports.submitReport = async(req, res)=>{
     }
 }
 
-exports.getDashboardData = async (req, res) => {
+exports.getReport = async (req, res) => {
   try {
     const { month } = req.query;
-    const reports = await Report.find({ month });
+    const reports = await report.find({ month });
 
     const summary = {
       totalNGOs: new Set(reports.map(r => r.ngoId)).size,
